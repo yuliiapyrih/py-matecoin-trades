@@ -31,6 +31,8 @@ def calculate_profit(file_name: str) -> None:
         "earned_money": str(earned_money),
         "matecoin_account": str(matecoin_account),
     }
-    output_path = os.path.join(os.path.dirname(__file__), "profit.json")
+
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    output_path = os.path.join(project_root, "profit.json")
     with open(output_path, "w") as file:
         json.dump(profit, file, indent=2)
